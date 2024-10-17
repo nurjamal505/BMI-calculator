@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+
+<GridPane alignment="CENTER" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.bmicalculatorapp.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <!-- Menu Bar -->
+    <MenuBar GridPane.columnSpan="2">
+        <Menu text="File">
+            <MenuItem fx:id="clearMenuItem" text="Clear" onAction="#onClearMenuItemClick"/>
+            <MenuItem fx:id="exitMenuItem" text="Exit" onAction="#onExitMenuItemClick"/>
+        </Menu>
+        <Menu text="Help">
+            <MenuItem fx:id="aboutMenuItem" text="About" onAction="#onAboutMenuItemClick"/>
+        </Menu>
+    </MenuBar>
+
+    <!-- Label and TextField for weight input -->
+    <Label text="Weight:"/>
+    <TextField fx:id="weightField" />
+
+    <!-- Label and TextField for height input -->
+    <Label text="Height:"/>
+    <TextField fx:id="heightField" />
+
+    <!-- Label for unit system selection -->
+    <Label text="Unit System:"/>
+
+    <!-- Assign the ToggleGroup to RadioButtons, without defining it separately -->
+    <RadioButton fx:id="metricRadio" text="Metric" toggleGroup="$NewToggleGroup"/>
+    <RadioButton fx:id="englishRadio" text="English" toggleGroup="$NewToggleGroup"/>
+
+    <!-- Button to trigger BMI calculation -->
+    <Button text="Calculate BMI" onAction="#onCalculateButtonClick"/>
+
+    <!-- Label to display the result or status message -->
+    <Label fx:id="statusLabel"/>
+
+    <!-- New Label to display BMI status -->
+    <Label fx:id="bmiStatusLabel"/>
+</GridPane>
